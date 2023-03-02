@@ -4,8 +4,14 @@ const Header = () => {
   return (
     <header className='header'>
       <div className='headerlogo'>
-      <img src='./images/icons_assets/Logo.svg' />
+      <img src='./images/icons_assets/Logo.svg' height={50} />
       </div>
+      <nav>
+          <ul className='mobilenav'>
+            <li><a href='order'>Take-Out</a></li>
+            <li><a href='reserve'>Reservations</a></li>
+          </ul>
+        </nav>  
       <nav className='nav'>
         <ul className='nav'>
           <li><a href='Home'>Home</a></li>

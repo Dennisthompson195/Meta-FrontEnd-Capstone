@@ -1,11 +1,10 @@
 import React from 'react'
+import Hero from './hero'
 
 const Main = () => {
   return (
     <main>
-      <div className='hero'>
-        hero
-      </div>
+      <Hero />
       <div className='highlights'>Highlights</div>
       <div className='hero'>Testimonials</div>
       <div className='about'>About</div>

@@ -7,6 +7,9 @@ const Footer = () => {
         <div className='footerlogo'>
       <img src='./images/icons_assets/LittleLemon9.png' width={100} />
       </div>
+        <div className='mobilefooterlogo'>
+      <img src='./images/icons_assets/LittleLemon9.png' width={50} />
+      </div>
         <ul className='none'>
           <h1>Navigation</h1>
           <li><a href='Home'>Home</a></li>
