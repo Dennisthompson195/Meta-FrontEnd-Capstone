@@ -1,13 +1,16 @@
 import React from 'react'
+import About from './about'
 import Hero from './hero'
+import Highlights from './highlights'
+import Testimonials from './testimonials'
 
 const Main = () => {
   return (
     <main>
       <Hero />
-      <div className='highlights'>Highlights</div>
-      <div className='hero'>Testimonials</div>
-      <div className='about'>About</div>
+      <Highlights />
+      <Testimonials />
+      <About />
     </main>
   )
 }

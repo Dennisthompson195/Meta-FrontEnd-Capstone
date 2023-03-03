@@ -1,4 +1,6 @@
 import React from 'react'
+import './Hero.css'
+
 
 const Hero = () => {
   return (
@@ -13,9 +15,9 @@ const Hero = () => {
             recipes served with a modern<br/>
             twist .
         </p>
-        <button className='btn hero'><a href='./reservations'>Make A Reservation</a></button>
+        <button className='btn content'><a href='./reservations'>Make A Reservation</a></button>
         </div>
-        <img className='herofood' src='images\icons_assets\restauranfood.jpg' height={325} width={375}/>
+        <img className='herofood' src='images\icons_assets\restaurant.jpg' height={400} width={325}/>
     </div>
   )
 }

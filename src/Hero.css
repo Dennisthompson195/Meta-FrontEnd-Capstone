@@ -1,0 +1,75 @@
+.hero .content > h1 {
+    color: #f4ce14;
+
+}
+.hero .content > h2 {
+    color: #edefee;
+    position: relative;
+    top: -25px;
+
+}
+.hero .content > p {
+    color: #edefee;
+    width: 250px;
+    font-size: 20px;
+    font-weight: 400;
+    display: inline-flex;
+    position: relative;
+
+  
+}
+
+.herofood {
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    border-radius: 16px;
+}
+
+
+.hero {
+    background-color: #495e57;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-left: 20%;
+}
+
+
+
+  .btn {
+    background-color: #f4ce14;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 16px;
+    height: 50px;
+    width: 175px;
+    margin: auto;
+    position: relative;
+    right: 36px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+
+    padding-top: 20px;
+    padding-left: 40px;
+}  
+
+.btn a {
+    position: relative;
+    top: -5px
+}
+
+.content > a {
+    text-align: center;
+    position: relative;
+    right: 5px
+}

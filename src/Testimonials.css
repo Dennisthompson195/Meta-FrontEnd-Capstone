@@ -1,0 +1,30 @@
+.testimonials > h1 {
+    color: #f4ce14;
+    padding-top: 75px;
+    padding-bottom: 20px;
+}
+
+.testimonials {
+    height: fit-content;
+    background-color:#495e57;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+.reviewcard {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 75px;
+}
+
+.Tcards { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}

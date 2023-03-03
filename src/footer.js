@@ -13,23 +13,23 @@ const Footer = () => {
         <ul className='none'>
           <h1>Navigation</h1>
           <li><a href='Home'>Home</a></li>
-          <li><a href='About'>about</a></li>
-          <li><a href='Menu'>menu</a></li>
-          <li><a href='reservations'>reservations</a></li>
-          <li><a href='Order'>online orders</a></li>
-          <li><a href='login'>login</a></li>
+          <li><a href='About'>About</a></li>
+          <li><a href='Menu'>Menu</a></li>
+          <li><a href='reservations'>Reservations</a></li>
+          <li><a href='Order'>Online Orders</a></li>
+          <li><a href='login'>Login</a></li>
         </ul>
         <ul className='none'>
           <h1>Contact Us</h1>
           <li><a>Address</a></li>
-          <li><a>phone number</a></li>
-          <li><a>email</a></li>
+          <li><a>Phone number</a></li>
+          <li><a>Email</a></li>
         </ul>
         <ul className='none'>
           <h1>Social Media</h1>
-          <li><a href='https://www.instagram.com'>instagram</a></li>
-          <li><a href='https://www.facebook.com'>facebook</a></li>
-          <li><a href='https:www.twitter.com'>twitter</a></li>
+          <li><a href='https://www.instagram.com'>Instagram</a></li>
+          <li><a href='https://www.facebook.com'>Facebook</a></li>
+          <li><a href='https:www.twitter.com'>Twitter</a></li>
         </ul>
       </nav>
     </footer>
