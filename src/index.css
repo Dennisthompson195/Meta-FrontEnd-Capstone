@@ -12,6 +12,22 @@ code {
     monospace;
 }
 
+.fourOFour { 
+  color: blue;
+  display: block;
+  position: absolute;
+  padding-left: 40%;
+  top: 30%
+}
+
+.fourOFour > p {
+  color: blue;
+}
+
+.link {
+  color: blue;
+}
+
 .about {
   background-color: #ffffff;
   height: fit-content;
@@ -19,6 +35,25 @@ code {
   flex-direction: row;
   flex-wrap: wrap;
   padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 40px;
+}
+
+.aboutTwo {
+  background-color: #495e57;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 40px;
+}
+
+.contentAboutTwo {
+  background-color: #495e57;
 }
 
 .aboutPicOne {
@@ -44,10 +79,30 @@ code {
 
 h1 {
   color: #000000;
+  
 }
 .contentAbout > h1 {
   color: #000000;
   padding-left: 10px;
+  margin-left: -465px;
+}
+.contentAboutTwo > h1 {
+  color: #f4ce14;
+  padding-left: 10px;
+  margin-left: -465px;
+}
+.contentAboutTwo > h2 {
+  color: #ffffff;
+  padding-left: 10px;
+}
+
+.contentAboutTwo {
+  padding-left: 50px;
+  padding-bottom: 150px;
+}
+
+.contentAboutTwo > h2 {
+  position: relative;
 }
 h2 {
   color: #333333;
@@ -91,6 +146,16 @@ h2 {
   padding-left: 10px;
   padding-right: 20px;
 }
+ .contentAboutTwo > p {
+  color: #ffffff;
+  width: 300px;
+  font-size: 20px;
+  font-weight: 400;
+  display: inline-flex;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 20px;
+}
 
 
 a {
@@ -105,6 +170,11 @@ a {
   background-color: #495e57;
   height: 325px;
   justify-content: space-evenly;
+  position: relative;
+}
+
+.footerTwo {
+  background-color: #ffffff;
 }
 
 .footerlogo {
@@ -186,7 +256,7 @@ a {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 15%;
   }
 
   .aboutPicTwo {
@@ -198,20 +268,20 @@ a {
     display: inline-flex;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 10px;
+    padding-left: 15%;
   }
 
   .contentAbout > h1 {
     display: inline-flex;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 10px;
+    padding-left: 15%;
   }
   .contentAbout > h2 {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 10px;
+    padding-left: 20%;
   }
 
   .herofood {

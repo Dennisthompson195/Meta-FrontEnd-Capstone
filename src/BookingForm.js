@@ -1,6 +1,10 @@
 import { React, useEffect, useState } from "react";
+import { Link, Route, Routes } from "react-router-dom";
 import App from "./App";
 import classes from "./Reservations.css";
+import Menu from "./Menu";
+import './Reservations.css'
+import Confirmation from "./Confirmation";
 
 const timeOptions = [
   "11:00 AM",
@@ -26,6 +30,14 @@ const timeOptions = [
   "9:00 PM",
   "9:30 PM",
 ];
+
+const occassionOptions = [
+  'occassion',
+  'birthday',
+  'engagement',
+  'anniversary',
+  'work meeting'
+]
 const personOptions = [
   "1 person",
   "2 people",
@@ -37,18 +49,18 @@ const personOptions = [
   "8 people",
 ];
 
-export default function Reservations({ onCloseLayout }) {
+const BookingForm = ({ onCloseLayout }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [person, setPerson] = useState("");
-  const [choosedTime, setChoosedTime] = useState("");
-  const [choosedDate, setChoosedDate] = useState("");
+  const [Time, setTime] = useState("");
+  const [newDate, setnewDate] = useState("");
 
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [personError, setPersonError] = useState(false);
-  const [choosedTimeError, setChoosedTimeError] = useState(false);
-  const [choosedDateError, setChoosedDateError] = useState(false);
+  const [TimeError, setTimeError] = useState(false);
+  const [DateError, setDateError] = useState(false);
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -56,15 +68,16 @@ export default function Reservations({ onCloseLayout }) {
     if (isSubmitted) {
       const buttonTextResume = setTimeout(() => {
         setIsSubmitted(false);
-      }, 2000);
+      }, 3000);
       return () => {
         clearTimeout(buttonTextResume);
       };
     }
-  }, [isSubmitted]);
+  }, {isSubmitted});
 
-  function onSubmitReservationHandlerByShihFengHsu(e) {
+  function onSubmitReservation(e) {
     e.preventDefault();
+    alert('sucessfully Reserved a Table!')
 
     let hasError = false;
 
@@ -84,12 +97,12 @@ export default function Reservations({ onCloseLayout }) {
     }
 
     if (
-      new Date(choosedDate).getFullYear() < new Date().getFullYear() ||
-      new Date(choosedDate).getMonth() < new Date().getMonth() ||
-      new Date(choosedDate).getDate() < new Date().getDate() ||
-      !new Date(choosedDate)
+      new Date(Date).getFullYear() < new Date().getFullYear() ||
+      new Date(Date).getMonth() < new Date().getMonth() ||
+      new Date(Date).getDate() < new Date().getDate() ||
+      !new Date(Date)
     ) {
-      setChoosedDateError(true);
+      setDateError(true);
       hasError = true;
     }
 
@@ -100,9 +113,9 @@ export default function Reservations({ onCloseLayout }) {
       // +choosedTime.split(":")[0] ||
       // +choosedTime.split(":")[1] > 60 ||
       // +choosedTime.split(":")[1] < 0
-      !timeOptions.includes(choosedTime)
+      !timeOptions.includes(Time)
     ) {
-      setChoosedTimeError(true);
+      setTimeError(true);
       hasError = true;
     }
 
@@ -117,14 +130,14 @@ export default function Reservations({ onCloseLayout }) {
     setNameError(false);
     setEmailError(false);
     setPersonError(false);
-    setChoosedDateError(false);
-    setChoosedTimeError(false);
-    const choosedHour = +choosedTime.split(":")[0];
-    const choosedMinute = +choosedTime.split(":")[1];
+    setDateError(false);
+    setTimeError(false);
+    const Hour = +Time.split(":")[0];
+    const Minute = +Time.split(":")[1];
 
-    const combinedDateHourAndMinute = new Date(choosedDate).setHours(
-      choosedHour,
-      choosedMinute
+    const combinedDateHourAndMinute = new Date(newDate).setHours(
+      Hour,
+      Minute
     );
     const reservedTime = new Date(combinedDateHourAndMinute);
 
@@ -134,8 +147,8 @@ export default function Reservations({ onCloseLayout }) {
     setName("");
     setEmail("");
     setPerson("");
-    setChoosedTime("");
-    setChoosedDate("");
+    setTime("");
+    setnewDate("");
     setIsSubmitted(true);
   }
 
@@ -161,24 +174,23 @@ export default function Reservations({ onCloseLayout }) {
   }
 
   return (
-    <article className='reservationsContainer'>
-      <div className='bgLayout'></div>
+    <article>
+      <div></div>
       <form
         className='form'
-        onSubmit={onSubmitReservationHandlerByShihFengHsu}
+        onSubmit={onSubmitReservation}
       >
         <button
           type="button"
-          onClick={() => {
-            return <a href="./home">Home</a>;
-          }}
           className='closeBtn'
-        >
-          ✕Close
+        ><Link to ='/'><img src='./images/icons_assets/home icon.svg' height={40} alt='logo' className="homeIcon" /></Link>
         </button>
-        <h1>Book a Table!</h1>
+        <h1>Reserve a Table</h1>
         {/*Name Input*/}
-        <label htmlFor="name">Your Name</label>
+        <label htmlFor="name">Name</label>
+        {nameError && (
+          <p className='inputError'>Name must not be empty</p>
+        )}
         <input
           required
           name="name"
@@ -188,12 +200,15 @@ export default function Reservations({ onCloseLayout }) {
           onChange={(e) => setName(e.target.value)}
           onBlur={nameCheckHandler}
         />
-        {nameError && (
-          <p className='inputError'>Name must not be empty</p>
-        )}
+        
 
         {/*Email Input*/}
         <label htmlFor="email">Email</label>
+        {emailError && (
+          <p role="alert" className='inputError'>
+          <span>.</span>Please enter a valid email
+          </p>
+        )}
         <input
           required
           name="email"
@@ -203,23 +218,19 @@ export default function Reservations({ onCloseLayout }) {
           onChange={(e) => setEmail(e.target.value)}
           onBlur={emailCheckHandler}
         />
-        {emailError && (
-          <p role="alert" className={classes.inputError}>
-            Invalid Email
-          </p>
-        )}
+        
 
         {/*Person Selector*/}
-        <label htmlFor="personByShihFengHsu">Table Size</label>
+        <label htmlFor="person">Table Size</label>
         <select
           required
-          id="personByShihFengHsu"
+          id="person"
           name="person"
           value={person}
           onChange={(e) => setPerson(e.target.value)}
         >
           <option disabled value="">
-            Choose...
+            choose...
           </option>
           ;
           {personOptions.map((opt, i) => {
@@ -244,10 +255,10 @@ export default function Reservations({ onCloseLayout }) {
           name="date"
           type="date"
           min={new Date().toISOString().slice(0, 10)}
-          value={choosedDate}
-          onChange={(e) => setChoosedDate(e.target.value)}
+          value={newDate}
+          onChange={(e) => setnewDate(e.target.value)}
         />
-        {choosedDateError && (
+        {DateError && (
           <p className='inputError'>
             Invalid Date, please choose a date after Today!
           </p>
@@ -259,8 +270,8 @@ export default function Reservations({ onCloseLayout }) {
           required
           id="time"
           name="time"
-          value={choosedTime}
-          onChange={(e) => setChoosedTime(e.target.value)}
+          value={Time}
+          onChange={(e) => setTime(e.target.value)}
         >
           <option disabled value="">
             {" "}
@@ -275,26 +286,49 @@ export default function Reservations({ onCloseLayout }) {
             );
           })}
         </select>
-        {choosedTimeError && (
+        {TimeError && (
           <p className='inputError'>
             Please Choose one of the options.
           </p>
         )}
+        <label htmlFor="time">Occassion</label>
+        <select
+          required
+          id="time"
+          name="time"
+          value={Time}
+          onChange={(e) => setTime(e.target.value)}
+        >
+          <option disabled value="">
+            optional
+          </option>
+          ;
+          {occassionOptions.map((time, i) => {
+            return (
+              <option key={i} value={time}>
+                {time}
+              </option>
+            );
+          })}
+        </select>
+        {TimeError && (
+          <p className='inputError'>
+            Please Choose one of the options.
+          </p>
+        )}
+        
 
         {isSubmitted ? (
-          <p style={{ fontSize: "2rem" }}>Submit Reservation Success!</p>
+          <p style={{ fontSize: "2rem" }}>{<Confirmation />}</p>
         ) : (
-          <input
-            type="submit"
-            value="Submit"
-            title="submitButton"
-            className='btn'
-          />
+          <button className="submitBtn">Submit</button>
         )}
       </form>
     </article>
   );
 }
+
+export default BookingForm
 
 {/*const Reservations = () => {
   return (

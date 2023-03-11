@@ -1,8 +1,8 @@
 import React from 'react'
-import About from './about'
-import Hero from './hero'
-import Highlights from './highlights'
-import Testimonials from './testimonials'
+import About from './About'
+import Hero from './Hero'
+import Highlights from './Highlights'
+import Testimonials from './Testimonials'
 
 const Main = () => {
   return (

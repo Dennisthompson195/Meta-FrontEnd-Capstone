@@ -42,6 +42,7 @@
   height: fit-content;
   background-color: #ffffff;
   padding: 10px;
+  position: relative;
 }
 
 .sectionH {
