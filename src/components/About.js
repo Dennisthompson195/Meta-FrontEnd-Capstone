@@ -1,11 +1,12 @@
 import React from 'react'
+import "../styles/ReservationsContent.css";
 
 const About = () => {
   return (
     <>  
         <div className='about'>
             <div className='contentAbout'>
-                <h1>Little Lemon</h1>
+                <h1 className='lemon'>Little Lemon</h1>
             <h2>Chicago</h2>
                 <p>
                     Based in Chicago, Illinois,
@@ -27,10 +28,10 @@ const About = () => {
                 </p>
                 </div>
                 <>
-                <img className='aboutPicOne' src='.\images\icons_assets\Mario and Adrian A.jpg' width={360} height={460}/>
+                <img className='aboutPicOne' src='.\images\icons_assets\Mario and Adrian A.jpg' width={325} height={460}/>
                 
               
-                <img className='aboutPicTwo' src='.\images\icons_assets\Mario and Adrian b.jpg' width={360} height={460}/>
+                <img className='aboutPicTwo' src='.\images\icons_assets\Mario and Adrian b.jpg' width={325} height={460}/>
                 </>
             </div>
     </>

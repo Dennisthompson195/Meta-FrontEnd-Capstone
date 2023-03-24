@@ -1,9 +1,6 @@
 import { React, useEffect, useState } from "react";
-import { Link, Route, Routes } from "react-router-dom";
-import App from "./App";
-import classes from "./Reservations.css";
-import Menu from "./Menu";
-import './Reservations.css'
+import { Link } from "react-router-dom";
+import '../styles/Reservations.css'
 import Confirmation from "./Confirmation";
 
 const timeOptions = [

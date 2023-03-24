@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import App from "./App";
+import App from "../App";
 import About from "./About";
 import BookingPage from "./BookingPage";
-import Orders from "./Orders";
-import Login from "./Login";
+import Orders from "../routes/Orders";
+import Login from "../routes/Login";
 import Confirmation from "./Confirmation";
 
 export default function Routing() {

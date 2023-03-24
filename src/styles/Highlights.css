@@ -121,3 +121,40 @@
   text-decoration: underline;
   background-color: #edefee;
 }
+
+@media (max-width: 800px) {
+  .content > h1 , h2, p {
+      margin-left: 100px;
+  }
+
+ p { 
+  position: relative;
+  top: 0;
+  left: -10%
+ }
+
+  .content > h1 {
+      margin-left: 50px;
+  }
+
+  .orders {
+    position: relative;
+    top: -10px
+  }
+
+  .ordersB { 
+    position: relative;
+    top: -15px;
+  }
+
+  .content > .btn {
+     margin-left: 60%;
+     margin-top: -75px;
+     margin-bottom: 50px;
+  }
+
+  .herofood {
+      margin-left: -13%;
+  }
+  
+}

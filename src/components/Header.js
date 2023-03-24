@@ -1,16 +1,14 @@
 import React from 'react'
-import './Header.css'
-import './index.css'
+import '../styles/Header.css'
+import '../styles/index.css'
 import { Routes, Route, Link } from 'react-router-dom';
-import Main from './Main';
-import Reservations from './BookingForm';
-import App from './App';
+import Main from '../routes/Main';
 import About from './About';
-import Orders from './Orders';
-import Menu from './Menu';
-import MobileMenu from './MobileMenu';
-import BookingPage from './BookingPage';
-import Home from './Home';
+import Orders from '../routes/Orders';
+import Menu from '../routes/Menu';
+import MobileMenu from '../routes/MobileMenu';
+import BookingPage from '../routes/BookingPage';
+
 
 const Header = () => {
   return (
@@ -23,8 +21,8 @@ const Header = () => {
         </button>  
       </div>
       <nav>
-          <ul className='mobilenav'>
-            <button>
+          <ul>
+            <button className='mobilenavbtn'>
               <Link to='./MobileMenu'>
                 <img src='.\images\icons_assets\🦆 icon _hamburger menu_.svg' alt='burger' />
               </Link>
@@ -33,7 +31,7 @@ const Header = () => {
         </nav>  
       <nav className='nav'>
         <ul className='nav'>
-          <li><Link to='/Home'>Home</Link></li>
+          <li className='list'><Link to='/'>Home</Link></li>
           <li><Link to='/About'>About</Link></li>
           <li><Link to ='/*Menu'>Menu</Link></li>
           <li><Link to="/reservations">Reservations</Link></li>
@@ -44,7 +42,6 @@ const Header = () => {
       <Routes>
         <Route path="/main" element={<Main />}/>
         <Route path="/reservations" element={<BookingPage />}/>
-        <Route path="/Home" element={<Home /> }/>
         <Route path="/About" element={<About /> }/>
         <Route path="/Order" element={<Orders /> }/>
         <Route path="/Order" element={<Menu /> }/>

@@ -1,10 +1,7 @@
 import React from 'react'
-import Footer from './Footer'
-import Header from './Header'
-import Hero from './Hero'
-import Testimonials from './Testimonials'
+import Header from '../components/Header'
 
-const AboutTwo = () => {
+const AboutPage = () => {
   return (
     <>  
       <Header />
@@ -13,7 +10,7 @@ const AboutTwo = () => {
                 <h1>Little Lemon</h1>
             <h2>Chicago</h2>
                 <p>
-                    Based in Chicago, Illinois,
+                    Based in Chicago, Illinois, 
                 
                     Little Lemon is a family-owned Mediterranean restaurant, 
                     focused on traditional recipes served with a modern twist. 
@@ -42,4 +39,4 @@ const AboutTwo = () => {
   )
 }
 
-export default AboutTwo
+export default AboutPage

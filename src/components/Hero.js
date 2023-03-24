@@ -1,5 +1,5 @@
 import React from 'react'
-import './Hero.css'
+import '../styles/Hero.css'
 import { Link } from 'react-router-dom'
 
 
@@ -16,9 +16,9 @@ const Hero = () => {
             recipes served with a modern<br/>
             twist .
         </p>
-        <button className='btn content'><Link to='./reservations' onClick={(e) => {console.log("clicked!")}}>Make A Reservation</Link></button>
+        <button className='book btn content'><Link to='./reservations'>Make A Reservation</Link></button>
         </div>
-        <img className='herofood' src='images\icons_assets\restaurant.jpg' height={400} width={325}/>
+        <img className='herofood' src='images\icons_assets\restaurant.jpg' height={550} width={475}/>
     </div>
   )
 }
